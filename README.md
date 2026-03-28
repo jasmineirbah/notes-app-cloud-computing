@@ -31,15 +31,17 @@ A simple fullstack Notes application using:
 ## 📦 Project Structure
 
 project/
-backend/
-- index.js
-- db.js
-- routes/
-frontend/
-- index.html
-- style.css
-- script.js
-notes_db.sql
+├── node_modules/
+│
+├── public/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+|
+├── server.js
+├── README.md
+├── test.http
+└── notes_db.sql
 
 ---
 
@@ -121,4 +123,4 @@ DELETE http://localhost:3000/notes/:id
 
 ## 👨‍💻 Author
 
-Your Name
+Jasmine

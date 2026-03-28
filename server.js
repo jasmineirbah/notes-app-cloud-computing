@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// 🔥 GANTI DENGAN IP VM KAMU
+// IP VM DI GCP
 const db = mysql.createConnection({
   host: '34.172.125.132',
   user: 'admin',
@@ -15,7 +15,7 @@ const db = mysql.createConnection({
   database: 'notes_db'
 });
 
-// koneksi
+// KONEKSI
 db.connect(err => {
   if (err) {
     console.error('DB error:', err);
@@ -25,16 +25,15 @@ db.connect(err => {
 });
 
 
-// ================= CRUD =================
-
-// GET (lihat semua)
+// CRUD
+// GET 
 app.get('/notes', (req, res) => {
   db.query('SELECT * FROM notes', (err, result) => {
     res.json(result);
   });
 });
 
-// POST (tambah)
+// POST 
 app.post('/notes', (req, res) => {
   const { judul, isi } = req.body;
 
@@ -45,7 +44,7 @@ app.post('/notes', (req, res) => {
   );
 });
 
-// PUT (edit)
+// PUT/EDIT
 app.put('/notes/:id', (req, res) => {
   const { judul, isi } = req.body;
 
@@ -56,7 +55,7 @@ app.put('/notes/:id', (req, res) => {
   );
 });
 
-// DELETE (hapus)
+// DELETE 
 app.delete('/notes/:id', (req, res) => {
   db.query(
     'DELETE FROM notes WHERE id=?',
@@ -65,8 +64,7 @@ app.delete('/notes/:id', (req, res) => {
   );
 });
 
-
-// server jalan
+// SERVER JALAN
 app.listen(3000, () => {
   console.log('Server jalan di http://localhost:3000 🔥');
 });
