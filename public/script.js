@@ -17,9 +17,7 @@ async function getNotes() {
     div.innerHTML = `
       <h3>${note.judul}</h3>
       <p>${note.isi}</p>
-      <small>
-        ${new Date(note.tanggal_dibuat).toLocaleDateString('id-ID')}
-      </small>
+      <small>${note.tanggal_dibuat}</small>
       <button class="edit-btn">Edit</button>
       <button class="delete-btn">Hapus</button>
     `;
