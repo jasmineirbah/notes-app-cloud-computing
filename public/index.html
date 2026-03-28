@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Notes App</title>
+
+  <!-- FONT POPPINS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <h1>Notes</h1>
+
+  <div class="form">
+    <input id="judul" placeholder="Judul catatan...">
+    <textarea id="isi" placeholder="Tulis isi catatan..."></textarea>
+    <button onclick="addNote()">Tambah Catatan</button>
+  </div>
+
+  <button onclick="getNotes()" class="lihat">Lihat Catatan</button>
+
+  <div id="notes" class="notes-grid"></div>
+
+</div>
+
+<!-- MODAL EDIT -->
+<div id="modal" class="modal hidden">
+  <div class="modal-content">
+    <h2>Edit Catatan</h2>
+    <input id="editJudul">
+    <textarea id="editIsi"></textarea>
+    <button onclick="updateNote()">Simpan</button>
+    <button class="secondary" onclick="closeModal()">Batal</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
